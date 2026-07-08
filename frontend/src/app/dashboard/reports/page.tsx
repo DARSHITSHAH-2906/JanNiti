@@ -102,7 +102,9 @@ export default function ResolutionProofPage() {
   };
 
   useEffect(() => {
-    void loadData();
+    void (async () => {
+      await loadData();
+    })();
   }, []);
 
   const stats = useMemo(() => {

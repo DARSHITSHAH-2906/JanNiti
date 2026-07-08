@@ -85,7 +85,9 @@ export default function SubmissionsPage() {
   }, [page, selectedSector, selectedStatus, searchQuery, sortBy]);
 
   useEffect(() => {
-    fetchSubmissions();
+    void (async () => {
+      await fetchSubmissions();
+    })();
   }, [fetchSubmissions]);
 
   const sectors = ["", "healthcare", "education", "water_sanitation", "roads_transport", "agriculture", "energy_digital", "housing", "environment", "social_welfare", "skill_youth"];

@@ -22,8 +22,7 @@ export function useFetch<T>(
   const [error, setError] = useState<string | null>(null);
 
   const enabled = options?.enabled ?? true;
-  const paramsRef = useRef(options?.params);
-  paramsRef.current = options?.params;
+  const params = options?.params;
 
   const fetchData = useCallback(async () => {
     if (!enabled) {
@@ -36,9 +35,9 @@ export function useFetch<T>(
 
     try {
       let fullUrl = `${BASE_URL}${url}`;
-      if (paramsRef.current) {
+      if (params) {
         const searchParams = new URLSearchParams();
-        Object.entries(paramsRef.current).forEach(([key, value]) => {
+        Object.entries(params).forEach(([key, value]) => {
           if (value !== undefined) searchParams.set(key, String(value));
         });
         const qs = searchParams.toString();
@@ -62,10 +61,12 @@ export function useFetch<T>(
     } finally {
       setLoading(false);
     }
-  }, [url, enabled]);
+  }, [url, enabled, params]);
 
   useEffect(() => {
-    fetchData();
+    void (async () => {
+      await fetchData();
+    })();
   }, [fetchData]);
 
   return { data, loading, error, refetch: fetchData };
