@@ -66,26 +66,26 @@ export function RecentSubmissions() {
       )}
 
       {!loading && submissions.length === 0 && (
-        <p className="text-center text-sm text-[var(--text-tertiary)] py-8">No submissions found</p>
+        <p className="text-center text-sm text-(--text-tertiary) py-8">No submissions found</p>
       )}
 
       <div className="space-y-2">
         {submissions.map((sub: any) => (
           <div
             key={sub.id}
-            className="flex items-center gap-3 rounded-lg p-3 hover:bg-[var(--bg-secondary)] transition-colors cursor-pointer"
+            className="flex items-center gap-3 rounded-lg p-3 hover:bg-(--bg-secondary) transition-colors cursor-pointer"
           >
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--bg-tertiary)] text-[var(--text-tertiary)]">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-(--bg-tertiary) text-(--text-tertiary)">
               {channelIcons[sub.channel] ?? <Globe className="h-3.5 w-3.5" />}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium text-[var(--text-primary)]">
+              <p className="truncate text-sm font-medium text-(--text-primary)">
                 {sub.title ?? "Untitled"}
               </p>
               <div className="mt-0.5 flex items-center gap-2">
-                <span className="text-xs text-[var(--text-tertiary)]">{sub.address ?? ""}</span>
-                <span className="text-[var(--text-tertiary)]">·</span>
-                <span className="text-xs text-[var(--text-tertiary)]">
+                <span className="text-xs text-(--text-tertiary)">{sub.address ?? ""}</span>
+                <span className="text-(--text-tertiary)">·</span>
+                <span className="text-xs text-(--text-tertiary)">
                   {sub.createdAt ? new Date(sub.createdAt).toLocaleDateString("en-IN") : ""}
                 </span>
               </div>
@@ -93,7 +93,7 @@ export function RecentSubmissions() {
             <div className="flex items-center gap-2 shrink-0">
               {sub.sector && <Badge variant="info" size="sm">{getSectorLabel(sub.sector)}</Badge>}
               {sub.upvotes != null && (
-                <span className="flex items-center gap-1 text-xs text-[var(--text-tertiary)]">
+                <span className="flex items-center gap-1 text-xs text-(--text-tertiary)">
                   <ThumbsUp className="h-3 w-3" />
                   {sub.upvotes}
                 </span>

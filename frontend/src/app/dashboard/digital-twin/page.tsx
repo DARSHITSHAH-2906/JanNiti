@@ -51,8 +51,8 @@ export default function DigitalTwinPage() {
             <Layers3 className="h-5 w-5 text-violet-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Digital Twin Simulator</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Digital Twin Simulator</h1>
+            <p className="text-sm text-(--text-secondary)">
               Scenario modeling for constituency development – compare outcomes under different strategies
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function DigitalTwinPage() {
               className="w-full text-left"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-[var(--text-primary)]">{scenario.name}</h3>
+                <h3 className="text-lg font-bold text-(--text-primary)">{scenario.name}</h3>
                 {selectedScenario === key && (
                   <Badge variant="success" size="sm" dot>Selected</Badge>
                 )}
@@ -109,16 +109,16 @@ export default function DigitalTwinPage() {
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[var(--text-tertiary)]">Budget</span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)]">{formatCurrency(scenario.budget)}</span>
+                  <span className="text-xs text-(--text-tertiary)">Budget</span>
+                  <span className="text-sm font-semibold text-(--text-primary)">{formatCurrency(scenario.budget)}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[var(--text-tertiary)]">Projects</span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)]">{scenario.projects}</span>
+                  <span className="text-xs text-(--text-tertiary)">Projects</span>
+                  <span className="text-sm font-semibold text-(--text-primary)">{scenario.projects}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[var(--text-tertiary)]">Beneficiaries</span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)]">{(scenario.beneficiaries / 1000).toFixed(0)}K</span>
+                  <span className="text-xs text-(--text-tertiary)">Beneficiaries</span>
+                  <span className="text-sm font-semibold text-(--text-primary)">{(scenario.beneficiaries / 1000).toFixed(0)}K</span>
                 </div>
               </div>
             </button>
@@ -145,10 +145,10 @@ export default function DigitalTwinPage() {
               ].map((metric) => (
                 <div key={metric.label} className={`rounded-xl ${metric.bg} p-5 text-center`}>
                   <metric.icon className={`h-6 w-6 mx-auto ${metric.color}`} />
-                  <p className="mt-3 text-3xl font-bold text-[var(--text-primary)]">
+                  <p className="mt-3 text-3xl font-bold text-(--text-primary)">
                     +{metric.value}%
                   </p>
-                  <p className="mt-1 text-xs text-[var(--text-secondary)]">{metric.label}</p>
+                  <p className="mt-1 text-xs text-(--text-secondary)">{metric.label}</p>
                 </div>
               ))}
             </div>
@@ -162,11 +162,11 @@ export default function DigitalTwinPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm" role="table">
                 <thead>
-                  <tr className="border-b border-[var(--border-primary)]">
-                    <th className="pb-3 pr-4 text-left text-xs font-semibold text-[var(--text-tertiary)] uppercase">Metric</th>
-                    <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Current Plan</th>
-                    <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">AI-Optimized</th>
-                    <th className="pb-3 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">High-Impact</th>
+                  <tr className="border-b border-(--border-primary)">
+                    <th className="pb-3 pr-4 text-left text-xs font-semibold text-(--text-tertiary) uppercase">Metric</th>
+                    <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Current Plan</th>
+                    <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">AI-Optimized</th>
+                    <th className="pb-3 text-center text-xs font-semibold text-(--text-tertiary) uppercase">High-Impact</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -179,12 +179,12 @@ export default function DigitalTwinPage() {
                     { metric: "Infra +%", values: [`+${scenarios.baseline.infraImprovement}%`, `+${scenarios.optimized.infraImprovement}%`, `+${scenarios.aggressive.infraImprovement}%`] },
                     { metric: "Satisfaction Δ", values: [`+${scenarios.baseline.satisfactionDelta}`, `+${scenarios.optimized.satisfactionDelta}`, `+${scenarios.aggressive.satisfactionDelta}`] },
                   ].map((row) => (
-                    <tr key={row.metric} className="border-b border-[var(--border-primary)] last:border-0">
-                      <td className="py-3 pr-4 text-sm font-medium text-[var(--text-primary)]">{row.metric}</td>
+                    <tr key={row.metric} className="border-b border-(--border-primary) last:border-0">
+                      <td className="py-3 pr-4 text-sm font-medium text-(--text-primary)">{row.metric}</td>
                       {row.values.map((val, i) => (
                         <td key={i} className={cn(
                           "py-3 pr-4 text-center text-sm",
-                          i === 1 ? "font-semibold text-primary-600" : "text-[var(--text-secondary)]"
+                          i === 1 ? "font-semibold text-primary-600" : "text-(--text-secondary)"
                         )}>
                           {val}
                         </td>
@@ -203,8 +203,8 @@ export default function DigitalTwinPage() {
                 <Sparkles className="h-6 w-6 text-primary-600" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-[var(--text-primary)]">AI Recommendation</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                <h3 className="text-base font-semibold text-(--text-primary)">AI Recommendation</h3>
+                <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">
                   The <strong>AI-Optimized Plan</strong> delivers the best value-for-money with 27% more beneficiaries
                   than the Current Plan at the same budget. It achieves this by: (1) consolidating 3 small road projects
                   into 1 efficient contract, (2) leveraging PMKSY co-funding for irrigation, (3) phasing healthcare
@@ -222,9 +222,9 @@ export default function DigitalTwinPage() {
       {!simComplete && !simRunning && (
         <Card className="animate-slide-up border-dashed">
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <Layers3 className="h-16 w-16 text-[var(--text-tertiary)] mb-4" />
-            <h3 className="text-lg font-semibold text-[var(--text-primary)]">Select a scenario and run simulation</h3>
-            <p className="mt-2 max-w-md text-sm text-[var(--text-secondary)]">
+            <Layers3 className="h-16 w-16 text-(--text-tertiary) mb-4" />
+            <h3 className="text-lg font-semibold text-(--text-primary)">Select a scenario and run simulation</h3>
+            <p className="mt-2 max-w-md text-sm text-(--text-secondary)">
               The Digital Twin uses historical data, demographic indicators, and AI models to predict
               development outcomes under different budget and strategy scenarios.
             </p>
@@ -237,12 +237,12 @@ export default function DigitalTwinPage() {
         <Card className="animate-fade-in">
           <div className="flex flex-col items-center justify-center py-12 text-center">
             <div className="relative mb-6">
-              <div className="h-20 w-20 rounded-full border-4 border-[var(--border-primary)]" />
+              <div className="h-20 w-20 rounded-full border-4 border-(--border-primary)" />
               <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-t-primary-500 animate-spin" />
               <Brain className="absolute inset-0 m-auto h-8 w-8 text-primary-500" />
             </div>
-            <h3 className="text-lg font-semibold text-[var(--text-primary)]">Running Simulation...</h3>
-            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+            <h3 className="text-lg font-semibold text-(--text-primary)">Running Simulation...</h3>
+            <p className="mt-2 text-sm text-(--text-secondary)">
               Analyzing {current.projects} projects across {(current.beneficiaries / 1000).toFixed(0)}K beneficiaries
             </p>
             <div className="mt-4 w-64">

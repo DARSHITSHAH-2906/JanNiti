@@ -41,7 +41,7 @@ export function Progress({
         />
       </div>
       {showLabel && (
-        <span className="mt-1 text-xs text-[var(--text-tertiary)]">
+        <span className="mt-1 text-xs text-(--text-tertiary)">
           {percentage.toFixed(0)}%
         </span>
       )}

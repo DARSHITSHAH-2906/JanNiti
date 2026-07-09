@@ -39,9 +39,9 @@ export function PlacesAutocomplete({
 
   if (!isLoaded) {
     return (
-      <div className={`flex items-center gap-2 h-9 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-3 ${className}`}>
-        <Loader2 className="h-3.5 w-3.5 animate-spin text-[var(--text-tertiary)]" />
-        <span className="text-sm text-[var(--text-tertiary)]">Loading maps...</span>
+      <div className={`flex items-center gap-2 h-9 rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-3 ${className}`}>
+        <Loader2 className="h-3.5 w-3.5 animate-spin text-(--text-tertiary)" />
+        <span className="text-sm text-(--text-tertiary)">Loading maps...</span>
       </div>
     );
   }
@@ -57,13 +57,13 @@ export function PlacesAutocomplete({
         }}
       >
         <div className="relative">
-          <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--text-tertiary)]" />
+          <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-(--text-tertiary)" />
           <input
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder={placeholder}
-            className="w-full h-9 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] pl-9 pr-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="w-full h-9 rounded-lg border border-(--border-primary) bg-(--bg-secondary) pl-9 pr-3 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
         </div>
       </Autocomplete>

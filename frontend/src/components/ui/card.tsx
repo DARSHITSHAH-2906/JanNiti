@@ -14,7 +14,7 @@ export function Card({ children, className, hover, glow, style }: CardProps) {
     <div
       style={style}
       className={cn(
-        "rounded-xl border border-[var(--border-primary)] bg-[var(--bg-card)] p-6",
+        "rounded-xl border border-(--border-primary) bg-[var(--bg-card)] p-6",
         "shadow-[var(--shadow-sm)]",
         "transition-all duration-300",
         hover && "hover:shadow-[var(--shadow-md)] hover:-translate-y-0.5",
@@ -37,7 +37,7 @@ export function CardHeader({ children, className }: { children: ReactNode; class
 
 export function CardTitle({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <h3 className={cn("text-base font-semibold text-[var(--text-primary)]", className)}>
+    <h3 className={cn("text-base font-semibold text-(--text-primary)", className)}>
       {children}
     </h3>
   );
@@ -45,7 +45,7 @@ export function CardTitle({ children, className }: { children: ReactNode; classN
 
 export function CardDescription({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={cn("text-sm text-[var(--text-secondary)]", className)}>
+    <p className={cn("text-sm text-(--text-secondary)", className)}>
       {children}
     </p>
   );

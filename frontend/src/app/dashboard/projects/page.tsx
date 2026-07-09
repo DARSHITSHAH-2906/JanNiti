@@ -45,8 +45,8 @@ export default function ProjectsPage() {
     <div className="space-y-6">
       <div className="animate-fade-in flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--text-primary)]">Development Projects</h1>
-          <p className="mt-1 text-sm text-[var(--text-secondary)]">
+          <h1 className="text-2xl font-bold text-(--text-primary)">Development Projects</h1>
+          <p className="mt-1 text-sm text-(--text-secondary)">
             AI-prioritized projects with Decision Intelligence scoring
           </p>
         </div>
@@ -68,8 +68,8 @@ export default function ProjectsPage() {
               <Target className="h-5 w-5 text-primary-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--text-primary)]">{projects.length}</p>
-              <p className="text-xs text-[var(--text-tertiary)]">Total Projects</p>
+              <p className="text-2xl font-bold text-(--text-primary)">{projects.length}</p>
+              <p className="text-xs text-(--text-tertiary)">Total Projects</p>
             </div>
           </div>
         </Card>
@@ -79,8 +79,8 @@ export default function ProjectsPage() {
               <IndianRupee className="h-5 w-5 text-emerald-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--text-primary)]">{formatCurrency(totalAllocated)}</p>
-              <p className="text-xs text-[var(--text-tertiary)]">Budget Allocated</p>
+              <p className="text-2xl font-bold text-(--text-primary)">{formatCurrency(totalAllocated)}</p>
+              <p className="text-xs text-(--text-tertiary)">Budget Allocated</p>
             </div>
           </div>
         </Card>
@@ -90,8 +90,8 @@ export default function ProjectsPage() {
               <Users className="h-5 w-5 text-blue-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--text-primary)]">{formatNumber(totalBeneficiaries)}</p>
-              <p className="text-xs text-[var(--text-tertiary)]">Est. Beneficiaries</p>
+              <p className="text-2xl font-bold text-(--text-primary)">{formatNumber(totalBeneficiaries)}</p>
+              <p className="text-xs text-(--text-tertiary)">Est. Beneficiaries</p>
             </div>
           </div>
         </Card>
@@ -101,8 +101,8 @@ export default function ProjectsPage() {
               <CheckCircle className="h-5 w-5 text-amber-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--text-primary)]">{statusCounts.in_progress}</p>
-              <p className="text-xs text-[var(--text-tertiary)]">In Progress</p>
+              <p className="text-2xl font-bold text-(--text-primary)">{statusCounts.in_progress}</p>
+              <p className="text-xs text-(--text-tertiary)">In Progress</p>
             </div>
           </div>
         </Card>
@@ -130,7 +130,7 @@ export default function ProjectsPage() {
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-base font-semibold text-[var(--text-primary)]">
+                    <h3 className="text-base font-semibold text-(--text-primary)">
                       {project.title}
                     </h3>
                     <div className="mt-2 flex flex-wrap gap-2">
@@ -162,25 +162,25 @@ export default function ProjectsPage() {
                 {/* Metrics Grid */}
                 <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-5">
                   <div>
-                    <p className="text-xs text-[var(--text-tertiary)]">Est. Cost</p>
-                    <p className="text-sm font-semibold text-[var(--text-primary)]">{formatCurrency(project.estimatedCost)}</p>
+                    <p className="text-xs text-(--text-tertiary)">Est. Cost</p>
+                    <p className="text-sm font-semibold text-(--text-primary)">{formatCurrency(project.estimatedCost)}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-[var(--text-tertiary)]">Allocated</p>
-                    <p className="text-sm font-semibold text-[var(--text-primary)]">
+                    <p className="text-xs text-(--text-tertiary)">Allocated</p>
+                    <p className="text-sm font-semibold text-(--text-primary)">
                       {project.allocatedBudget > 0 ? formatCurrency(project.allocatedBudget) : "—"}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs text-[var(--text-tertiary)]">Beneficiaries</p>
-                    <p className="text-sm font-semibold text-[var(--text-primary)]">{formatNumber(project.beneficiaries ?? project.estimatedBeneficiaries ?? 0)}</p>
+                    <p className="text-xs text-(--text-tertiary)">Beneficiaries</p>
+                    <p className="text-sm font-semibold text-(--text-primary)">{formatNumber(project.beneficiaries ?? project.estimatedBeneficiaries ?? 0)}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-[var(--text-tertiary)]">Villages</p>
-                    <p className="text-sm font-semibold text-[var(--text-primary)]">{(project.villages ?? project.villageIds ?? []).length} linked</p>
+                    <p className="text-xs text-(--text-tertiary)">Villages</p>
+                    <p className="text-sm font-semibold text-(--text-primary)">{(project.villages ?? project.villageIds ?? []).length} linked</p>
                   </div>
                   <div>
-                    <p className="text-xs text-[var(--text-tertiary)]">Completion</p>
+                    <p className="text-xs text-(--text-tertiary)">Completion</p>
                     <div className="flex items-center gap-2">
                       <Progress value={project.completion ?? project.completionPercentage ?? 0} size="sm" className="flex-1" barClassName={(project.completion ?? project.completionPercentage ?? 0) >= 50 ? "bg-emerald-500" : "bg-primary-500"} />
                       <span className="text-xs font-medium">{project.completion ?? project.completionPercentage ?? 0}%</span>
@@ -205,7 +205,7 @@ export default function ProjectsPage() {
                       <h4 className="text-xs font-semibold uppercase text-primary-700 dark:text-primary-400 mb-2">
                         AI Priority Explanation
                       </h4>
-                      <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                      <p className="text-sm leading-relaxed text-(--text-secondary)">
                         {project.explanation ?? project.description ?? "Run the Decision Engine to generate AI explanation."}
                       </p>
                     </div>
@@ -219,9 +219,9 @@ export default function ProjectsPage() {
                         { label: "Env. Impact", value: project.envImpact ?? project.environmentalImpactScore ?? 0, color: "#06B6D4" },
                         { label: "Infra Gap", value: project.infraGap ?? project.infrastructureGapScore ?? 0, color: "#EF4444" },
                       ].map((metric) => (
-                        <div key={metric.label} className="text-center rounded-lg bg-[var(--bg-secondary)] p-3">
+                        <div key={metric.label} className="text-center rounded-lg bg-(--bg-secondary) p-3">
                           <ScoreRing score={metric.value} size={52} strokeWidth={4} color={metric.color} />
-                          <p className="mt-1 text-[10px] font-medium text-[var(--text-tertiary)]">{metric.label}</p>
+                          <p className="mt-1 text-[10px] font-medium text-(--text-tertiary)">{metric.label}</p>
                         </div>
                       ))}
                     </div>

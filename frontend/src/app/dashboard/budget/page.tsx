@@ -57,8 +57,8 @@ export default function BudgetPage() {
             <IndianRupee className="h-5 w-5 text-emerald-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Budget & MPLADS Management</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Budget & MPLADS Management</h1>
+            <p className="text-sm text-(--text-secondary)">
               Fund allocation, utilization tracking, and budget management
             </p>
           </div>
@@ -68,23 +68,23 @@ export default function BudgetPage() {
       {/* Budget Overview */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
         <Card hover className="animate-slide-up">
-          <p className="text-xs font-medium text-[var(--text-tertiary)] uppercase">Total Allocated</p>
-          <p className="mt-2 text-3xl font-bold text-[var(--text-primary)]">{formatCurrency(summary.totalAllocated)}</p>
+          <p className="text-xs font-medium text-(--text-tertiary) uppercase">Total Allocated</p>
+          <p className="mt-2 text-3xl font-bold text-(--text-primary)">{formatCurrency(summary.totalAllocated)}</p>
         </Card>
         <Card hover className="animate-slide-up" style={{ animationDelay: "50ms" }}>
-          <p className="text-xs font-medium text-[var(--text-tertiary)] uppercase">Utilized</p>
+          <p className="text-xs font-medium text-(--text-tertiary) uppercase">Utilized</p>
           <p className="mt-2 text-3xl font-bold text-emerald-600">{formatCurrency(summary.totalSpent)}</p>
           <Progress value={summary.utilizationRate} size="sm" barClassName="bg-emerald-500" className="mt-2" />
-          <p className="mt-1 text-xs text-[var(--text-tertiary)]">{summary.utilizationRate}% utilization</p>
+          <p className="mt-1 text-xs text-(--text-tertiary)">{summary.utilizationRate}% utilization</p>
         </Card>
         <Card hover className="animate-slide-up" style={{ animationDelay: "100ms" }}>
-          <p className="text-xs font-medium text-[var(--text-tertiary)] uppercase">Balance</p>
+          <p className="text-xs font-medium text-(--text-tertiary) uppercase">Balance</p>
           <p className="mt-2 text-3xl font-bold text-amber-600">{formatCurrency(summary.balance)}</p>
         </Card>
         <Card hover className="animate-slide-up" style={{ animationDelay: "150ms" }}>
-          <p className="text-xs font-medium text-[var(--text-tertiary)] uppercase">Financial Years</p>
+          <p className="text-xs font-medium text-(--text-tertiary) uppercase">Financial Years</p>
           <p className="mt-2 text-3xl font-bold text-purple-600">{allocations.length}</p>
-          <p className="mt-1 text-xs text-[var(--text-tertiary)]">{allocations.map((a: any) => a.financialYear).join(", ")}</p>
+          <p className="mt-1 text-xs text-(--text-tertiary)">{allocations.map((a: any) => a.financialYear).join(", ")}</p>
         </Card>
       </div>
 
@@ -95,7 +95,7 @@ export default function BudgetPage() {
         </CardHeader>
         <div className="h-80">
           {chartData.length === 0 ? (
-            <p className="text-center text-sm text-[var(--text-tertiary)] py-12">No sector data available</p>
+            <p className="text-center text-sm text-(--text-tertiary) py-12">No sector data available</p>
           ) : (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
@@ -119,22 +119,22 @@ export default function BudgetPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm" role="table">
             <thead>
-              <tr className="border-b border-[var(--border-primary)]">
-                <th className="pb-3 text-left text-xs font-semibold text-[var(--text-tertiary)] uppercase">Sector</th>
-                <th className="pb-3 text-right text-xs font-semibold text-[var(--text-tertiary)] uppercase">Allocated</th>
-                <th className="pb-3 text-right text-xs font-semibold text-[var(--text-tertiary)] uppercase">Spent</th>
-                <th className="pb-3 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Utilization</th>
-                <th className="pb-3 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Status</th>
+              <tr className="border-b border-(--border-primary)">
+                <th className="pb-3 text-left text-xs font-semibold text-(--text-tertiary) uppercase">Sector</th>
+                <th className="pb-3 text-right text-xs font-semibold text-(--text-tertiary) uppercase">Allocated</th>
+                <th className="pb-3 text-right text-xs font-semibold text-(--text-tertiary) uppercase">Spent</th>
+                <th className="pb-3 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Utilization</th>
+                <th className="pb-3 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Status</th>
               </tr>
             </thead>
             <tbody>
               {chartData.map((row) => {
                 const util = row.allocated > 0 ? (row.spent / row.allocated) * 100 : 0;
                 return (
-                  <tr key={row.sector} className="border-b border-[var(--border-primary)] last:border-0 hover:bg-[var(--bg-secondary)]">
-                    <td className="py-3 font-medium text-[var(--text-primary)] capitalize">{row.sector}</td>
-                    <td className="py-3 text-right text-[var(--text-secondary)]">{formatCurrency(row.allocated)}</td>
-                    <td className="py-3 text-right text-[var(--text-secondary)]">{formatCurrency(row.spent)}</td>
+                  <tr key={row.sector} className="border-b border-(--border-primary) last:border-0 hover:bg-(--bg-secondary)">
+                    <td className="py-3 font-medium text-(--text-primary) capitalize">{row.sector}</td>
+                    <td className="py-3 text-right text-(--text-secondary)">{formatCurrency(row.allocated)}</td>
+                    <td className="py-3 text-right text-(--text-secondary)">{formatCurrency(row.spent)}</td>
                     <td className="py-3">
                       <div className="flex items-center justify-center gap-2">
                         <Progress value={util} size="sm" className="w-20" barClassName={util >= 80 ? "bg-emerald-500" : util >= 50 ? "bg-amber-500" : "bg-red-500"} />

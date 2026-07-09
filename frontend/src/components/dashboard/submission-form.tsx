@@ -154,7 +154,7 @@ export function SubmissionForm({ onClose, onSuccess }: SubmissionFormProps) {
 
         {/* Main text */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+          <label className="block text-sm font-medium text-(--text-primary) mb-1">
             Describe the issue or suggestion *
           </label>
           <textarea
@@ -163,18 +163,18 @@ export function SubmissionForm({ onClose, onSuccess }: SubmissionFormProps) {
             onChange={(e) => setText(e.target.value)}
             placeholder="E.g., The main water pipeline in our village has been broken for 2 weeks. 500 families are affected..."
             required
-            className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
+            className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
           />
         </div>
 
         {/* Channel + Language */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-1">Channel</label>
+            <label className="block text-sm font-medium text-(--text-primary) mb-1">Channel</label>
             <select
               value={channel}
               onChange={(e) => setChannel(e.target.value)}
-              className="w-full h-9 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-3 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full h-9 rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-3 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="web">Web Portal</option>
               <option value="whatsapp">WhatsApp</option>
@@ -185,11 +185,11 @@ export function SubmissionForm({ onClose, onSuccess }: SubmissionFormProps) {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[var(--text-primary)] mb-1">Language</label>
+            <label className="block text-sm font-medium text-(--text-primary) mb-1">Language</label>
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              className="w-full h-9 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-3 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full h-9 rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-3 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="hi">Hindi</option>
               <option value="en">English</option>
@@ -203,7 +203,7 @@ export function SubmissionForm({ onClose, onSuccess }: SubmissionFormProps) {
 
         {/* Location with Google Places Autocomplete */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-primary)] mb-1">Location</label>
+          <label className="block text-sm font-medium text-(--text-primary) mb-1">Location</label>
           <div className="flex gap-2">
             <PlacesAutocomplete
               placeholder="Search village, area, or landmark..."
@@ -233,7 +233,7 @@ export function SubmissionForm({ onClose, onSuccess }: SubmissionFormProps) {
 
         {/* Media buttons */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+          <label className="block text-sm font-medium text-(--text-primary) mb-1">
             Attachments (optional)
           </label>
           <div className="flex flex-wrap gap-2">

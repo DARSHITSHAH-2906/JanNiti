@@ -78,12 +78,12 @@ export default function CopilotPage() {
     <div className="flex h-[calc(100vh-8rem)] flex-col">
       {/* Header */}
       <div className="animate-fade-in mb-4 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-primary-500 to-accent-500 shadow-lg">
           <Bot className="h-5 w-5 text-white" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-[var(--text-primary)]">AI Copilot</h1>
-          <p className="text-sm text-[var(--text-secondary)]">
+          <h1 className="text-2xl font-bold text-(--text-primary)">AI Copilot</h1>
+          <p className="text-sm text-(--text-secondary)">
             Ask about submissions, projects, budget, or development priorities
             <br />Disclaimer: Kindly wait for ateast 1-2 minute after one query.
           </p>
@@ -99,8 +99,8 @@ export default function CopilotPage() {
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-center">
               <Bot className="h-12 w-12 text-primary-300 mb-4" />
-              <h3 className="text-lg font-semibold text-[var(--text-primary)]">How can I help?</h3>
-              <p className="text-sm text-[var(--text-tertiary)] mt-1 max-w-md">
+              <h3 className="text-lg font-semibold text-(--text-primary)">How can I help?</h3>
+              <p className="text-sm text-(--text-tertiary) mt-1 max-w-md">
                 I can answer questions about citizen submissions, project priorities, budget utilization, and more.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2 max-w-lg">
@@ -115,7 +115,7 @@ export default function CopilotPage() {
                   <button
                     key={example}
                     onClick={() => setInput(example)}
-                    className="rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-3 py-1.5 text-xs text-[var(--text-secondary)] hover:border-primary-400 hover:text-primary-600 transition-colors"
+                    className="rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-3 py-1.5 text-xs text-(--text-secondary) hover:border-primary-400 hover:text-primary-600 transition-colors"
                   >
                     <Lightbulb className="inline h-3 w-3 mr-1" />
                     {example}
@@ -128,7 +128,7 @@ export default function CopilotPage() {
           {messages.map((msg) => (
             <div key={msg.id} className={cn("flex gap-3", msg.role === "user" ? "justify-end" : "justify-start")}>
               {msg.role === "assistant" && (
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-primary-500 to-accent-500">
                   <Bot className="h-4 w-4 text-white" />
                 </div>
               )}
@@ -136,18 +136,18 @@ export default function CopilotPage() {
                 "max-w-[75%] rounded-xl px-4 py-2.5",
                 msg.role === "user"
                   ? "bg-primary-600 text-white"
-                  : "bg-[var(--bg-secondary)] text-[var(--text-primary)] border border-[var(--border-primary)]"
+                  : "bg-(--bg-secondary) text-(--text-primary) border border-(--border-primary)"
               )}>
                 <p className="text-sm whitespace-pre-wrap">{msg.content || (streaming ? "..." : "")}</p>
                 {msg.role === "assistant" && msg.content && (
-                  <button onClick={() => copyMessage(msg.content)} className="mt-1 text-[10px] text-[var(--text-tertiary)] hover:text-primary-500 flex items-center gap-1">
+                  <button onClick={() => copyMessage(msg.content)} className="mt-1 text-[10px] text-(--text-tertiary) hover:text-primary-500 flex items-center gap-1">
                     <Copy className="h-2.5 w-2.5" /> Copy
                   </button>
                 )}
               </div>
               {msg.role === "user" && (
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--bg-tertiary)]">
-                  <User className="h-4 w-4 text-[var(--text-secondary)]" />
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-(--bg-tertiary)">
+                  <User className="h-4 w-4 text-(--text-secondary)" />
                 </div>
               )}
             </div>
@@ -156,7 +156,7 @@ export default function CopilotPage() {
         </div>
 
         {/* Input */}
-        <div className="border-t border-[var(--border-primary)] p-4">
+        <div className="border-t border-(--border-primary) p-4">
           <div className="flex gap-2">
             <textarea
               value={input}
@@ -164,7 +164,7 @@ export default function CopilotPage() {
               onKeyDown={handleKeyDown}
               placeholder="Ask about submissions, projects, budget..."
               rows={1}
-              className="flex-1 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
+              className="flex-1 rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
             />
             <Button
               onClick={handleSend}

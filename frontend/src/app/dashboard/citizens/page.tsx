@@ -37,8 +37,8 @@ export default function CitizenPortalPage() {
             <Users className="h-5 w-5 text-green-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Citizen Portal</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Citizen Portal</h1>
+            <p className="text-sm text-(--text-secondary)">
               Multilingual submission with voice, text, image, WhatsApp & offline support
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function CitizenPortalPage() {
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex gap-1 rounded-xl bg-[var(--bg-tertiary)] p-1">
+      <div className="flex gap-1 rounded-xl bg-(--bg-tertiary) p-1">
         {[
           { key: "submit", label: "Submit Feedback", icon: Send },
           { key: "track", label: "Track Submissions", icon: CheckCircle },
@@ -67,8 +67,8 @@ export default function CitizenPortalPage() {
             onClick={() => setActiveTab(tab.key as "submit" | "track" | "engage")}
             className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium transition-all ${
               activeTab === tab.key
-                ? "bg-[var(--bg-card)] text-[var(--text-primary)] shadow-sm"
-                : "text-[var(--text-tertiary)] hover:text-[var(--text-secondary)]"
+                ? "bg-(--bg-card) text-(--text-primary) shadow-sm"
+                : "text-(--text-tertiary) hover:text-(--text-secondary)"
             }`}
           >
             <tab.icon className="h-4 w-4" />
@@ -90,7 +90,7 @@ export default function CitizenPortalPage() {
               <div className="space-y-4">
                 {/* Language selection */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Select Language
                   </label>
                   <div className="mt-2 flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ export default function CitizenPortalPage() {
                         className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
                           lang === "English"
                             ? "border-primary-500 bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400"
-                            : "border-[var(--border-primary)] text-[var(--text-secondary)] hover:border-primary-300"
+                            : "border-(--border-primary) text-(--text-secondary) hover:border-primary-300"
                         }`}
                       >
                         {lang}
@@ -111,34 +111,34 @@ export default function CitizenPortalPage() {
 
                 {/* Title */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Title / Subject
                   </label>
                   <input
                     type="text"
                     placeholder="Brief description of your development need..."
-                    className="mt-2 w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                    className="mt-2 w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
                   />
                 </div>
 
                 {/* Description */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Detailed Description
                   </label>
                   <textarea
                     rows={4}
                     placeholder="Describe the development need, location, affected people, and urgency..."
-                    className="mt-2 w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none"
+                    className="mt-2 w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none"
                   />
                 </div>
 
                 {/* Sector */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Sector
                   </label>
-                  <select className="mt-2 w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none">
+                  <select className="mt-2 w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none">
                     <option>Select sector...</option>
                     <option>Healthcare</option>
                     <option>Education</option>
@@ -155,19 +155,19 @@ export default function CitizenPortalPage() {
 
                 {/* Location */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Village / Ward
                   </label>
                   <input
                     type="text"
                     placeholder="Enter village or ward name..."
-                    className="mt-2 w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                    className="mt-2 w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
                   />
                 </div>
 
                 {/* Attachment Options */}
                 <div>
-                  <label className="text-xs font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <label className="text-xs font-medium text-(--text-tertiary) uppercase tracking-wider">
                     Attachments
                   </label>
                   <div className="mt-2 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -179,11 +179,11 @@ export default function CitizenPortalPage() {
                     ].map((opt) => (
                       <button
                         key={opt.label}
-                        className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-[var(--border-primary)] p-4 hover:border-primary-400 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all"
+                        className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-(--border-primary) p-4 hover:border-primary-400 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all"
                       >
                         <opt.icon className="h-6 w-6 text-primary-500" />
-                        <span className="text-xs font-medium text-[var(--text-primary)]">{opt.label}</span>
-                        <span className="text-[10px] text-[var(--text-tertiary)]">{opt.desc}</span>
+                        <span className="text-xs font-medium text-(--text-primary)">{opt.label}</span>
+                        <span className="text-[10px] text-(--text-tertiary)">{opt.desc}</span>
                       </button>
                     ))}
                   </div>
@@ -209,11 +209,11 @@ export default function CitizenPortalPage() {
                   { icon: Mic, label: "Voice Helpline", desc: "Call 1800-XXX-XXXX (toll-free)", color: "text-purple-500" },
                   { icon: Globe, label: "Offline Mode", desc: "Available in mobile app", color: "text-orange-500" },
                 ].map((ch) => (
-                  <div key={ch.label} className="flex items-center gap-3 rounded-lg p-3 border border-[var(--border-primary)]">
+                  <div key={ch.label} className="flex items-center gap-3 rounded-lg p-3 border border-(--border-primary)">
                     <ch.icon className={`h-5 w-5 ${ch.color}`} />
                     <div>
-                      <p className="text-sm font-medium text-[var(--text-primary)]">{ch.label}</p>
-                      <p className="text-xs text-[var(--text-tertiary)]">{ch.desc}</p>
+                      <p className="text-sm font-medium text-(--text-primary)">{ch.label}</p>
+                      <p className="text-xs text-(--text-tertiary)">{ch.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -224,7 +224,7 @@ export default function CitizenPortalPage() {
               <CardHeader>
                 <CardTitle>AI Processing</CardTitle>
               </CardHeader>
-              <div className="space-y-2 text-xs text-[var(--text-secondary)]">
+              <div className="space-y-2 text-xs text-(--text-secondary)">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
                   Auto-translation to English
@@ -270,11 +270,11 @@ export default function CitizenPortalPage() {
               { title: "Street lights needed near school", status: "verified", date: "2026-01-05", progress: 25 },
               { title: "Road repair on NH-2 link road", status: "completed", date: "2025-11-15", progress: 100 },
             ].map((sub, i) => (
-              <div key={i} className="rounded-xl border border-[var(--border-primary)] p-4">
+              <div key={i} className="rounded-xl border border-(--border-primary) p-4">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h4 className="text-sm font-medium text-[var(--text-primary)]">{sub.title}</h4>
-                    <p className="text-xs text-[var(--text-tertiary)] mt-1">Submitted: {sub.date}</p>
+                    <h4 className="text-sm font-medium text-(--text-primary)">{sub.title}</h4>
+                    <p className="text-xs text-(--text-tertiary) mt-1">Submitted: {sub.date}</p>
                   </div>
                   <Badge
                     variant={sub.status === "completed" ? "success" : sub.status === "in_progress" ? "warning" : "info"}
@@ -286,7 +286,7 @@ export default function CitizenPortalPage() {
                 </div>
                 <div className="mt-3 flex items-center gap-3">
                   <Progress value={sub.progress} size="sm" className="flex-1" barClassName={sub.progress === 100 ? "bg-emerald-500" : "bg-primary-500"} />
-                  <span className="text-xs font-medium text-[var(--text-secondary)]">{sub.progress}%</span>
+                  <span className="text-xs font-medium text-(--text-secondary)">{sub.progress}%</span>
                 </div>
               </div>
             ))}
@@ -306,13 +306,13 @@ export default function CitizenPortalPage() {
               { title: "Community Health Center – Ramnagar", votes: 321, sector: "Healthcare" },
               { title: "Vocational Training Center – Sarnath", votes: 203, sector: "Skill Development" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 rounded-lg p-3 hover:bg-[var(--bg-secondary)] transition-colors">
+              <div key={i} className="flex items-center gap-4 rounded-lg p-3 hover:bg-(--bg-secondary) transition-colors">
                 <Button variant="secondary" size="sm" icon={<ThumbsUp className="h-3.5 w-3.5" />}>
                   {item.votes}
                 </Button>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-[var(--text-primary)]">{item.title}</p>
-                  <p className="text-xs text-[var(--text-tertiary)]">{item.sector}</p>
+                  <p className="text-sm font-medium text-(--text-primary)">{item.title}</p>
+                  <p className="text-xs text-(--text-tertiary)">{item.sector}</p>
                 </div>
               </div>
             ))}

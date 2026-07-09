@@ -35,10 +35,10 @@ function KPICard({ title, value, subtitle, trend, icon, iconBg, delay }: KPICard
     >
       <div className="flex items-start justify-between">
         <div className="space-y-2">
-          <p className="text-xs font-medium uppercase tracking-wider text-[var(--text-tertiary)]">
+          <p className="text-xs font-medium uppercase tracking-wider text-(--text-tertiary)">
             {title}
           </p>
-          <p className="text-2xl font-bold text-[var(--text-primary)]">{value}</p>
+          <p className="text-2xl font-bold text-(--text-primary)">{value}</p>
           <div className="flex items-center gap-2">
             {trend !== undefined && (
               <span
@@ -51,7 +51,7 @@ function KPICard({ title, value, subtitle, trend, icon, iconBg, delay }: KPICard
                 {Math.abs(trend)}%
               </span>
             )}
-            <span className="text-xs text-[var(--text-tertiary)]">{subtitle}</span>
+            <span className="text-xs text-(--text-tertiary)">{subtitle}</span>
           </div>
         </div>
         <div className={cn("flex h-11 w-11 items-center justify-center rounded-xl", iconBg)}>

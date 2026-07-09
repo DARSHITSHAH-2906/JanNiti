@@ -99,7 +99,7 @@ export default function DashboardPage() {
       <div className="animate-fade-in flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">
               JanNiti AI Dashboard
             </h1>
             <Badge variant="info" size="md" dot dotColor="bg-emerald-500">
@@ -107,7 +107,7 @@ export default function DashboardPage() {
               AI Powered
             </Badge>
           </div>
-          <p className="mt-1 text-sm text-[var(--text-secondary)]">
+          <p className="mt-1 text-sm text-(--text-secondary)">
             Varanasi Parliamentary Constituency · Uttar Pradesh · Real-time AI analytics
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function DashboardPage() {
               Ask AI Copilot
             </Button>
           </Link>
-          <div className="flex items-center gap-2 text-xs text-[var(--text-tertiary)]">
+          <div className="flex items-center gap-2 text-xs text-(--text-tertiary)">
             <Calendar className="h-3.5 w-3.5" />
             {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
           </div>
@@ -135,8 +135,8 @@ export default function DashboardPage() {
               label="Health Score"
             />
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-[var(--text-primary)]">Constituency Health</h3>
-              <p className="text-sm text-[var(--text-secondary)] mt-1">
+              <h3 className="text-lg font-bold text-(--text-primary)">Constituency Health</h3>
+              <p className="text-sm text-(--text-secondary) mt-1">
                 Composite score based on infrastructure, services, and citizen satisfaction
               </p>
               <div className="mt-3 flex items-center gap-2">
@@ -167,14 +167,14 @@ export default function DashboardPage() {
                     ? "border-red-200 bg-red-50/50 dark:border-red-800 dark:bg-red-900/10"
                     : cluster.trend === "rising"
                       ? "border-amber-200 bg-amber-50/50 dark:border-amber-800 dark:bg-amber-900/10"
-                      : "border-[var(--border-primary)] bg-[var(--bg-secondary)]"
+                      : "border-(--border-primary) bg-(--bg-secondary)"
                 )}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className={cn(
                     "text-xs font-bold",
                     cluster.trend === "critical" ? "text-red-600" :
-                      cluster.trend === "rising" ? "text-amber-600" : "text-[var(--text-primary)]"
+                      cluster.trend === "rising" ? "text-amber-600" : "text-(--text-primary)"
                   )}>
                     {cluster.count}
                   </span>
@@ -182,10 +182,10 @@ export default function DashboardPage() {
                     <AlertTriangle className="h-3.5 w-3.5 text-red-500" />
                   )}
                 </div>
-                <p className="text-xs font-medium text-[var(--text-primary)] leading-tight line-clamp-2">
+                <p className="text-xs font-medium text-(--text-primary) leading-tight line-clamp-2">
                   {cluster.name}
                 </p>
-                <p className="text-[10px] text-[var(--text-tertiary)] mt-1">
+                <p className="text-[10px] text-(--text-tertiary) mt-1">
                   {cluster.villages.slice(0, 2).join(", ")}
                 </p>
               </div>
@@ -235,8 +235,8 @@ export default function DashboardPage() {
                 <metric.icon className={`h-5 w-5 ${metric.color}`} />
               </div>
               <div>
-                <p className="text-2xl font-bold text-[var(--text-primary)]">{metric.value}</p>
-                <p className="text-xs text-[var(--text-tertiary)]">{metric.label}</p>
+                <p className="text-2xl font-bold text-(--text-primary)">{metric.value}</p>
+                <p className="text-xs text-(--text-tertiary)">{metric.label}</p>
                 <span className={`text-xs font-medium ${metric.positive ? "text-emerald-600" : "text-red-600"}`}>
                   {metric.change}
                 </span>
@@ -287,11 +287,11 @@ export default function DashboardPage() {
           </CardHeader>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {channelData.map((ch) => (
-              <div key={ch.channel} className="rounded-xl border border-[var(--border-primary)] p-4 text-center">
-                <p className="text-2xl font-bold text-[var(--text-primary)]">{ch.percentage}%</p>
+              <div key={ch.channel} className="rounded-xl border border-(--border-primary) p-4 text-center">
+                <p className="text-2xl font-bold text-(--text-primary)">{ch.percentage}%</p>
                 <Progress value={ch.percentage} size="sm" className="mt-2" barClassName="bg-primary-500" />
-                <p className="mt-2 text-xs font-medium text-[var(--text-secondary)]">{ch.channel}</p>
-                <p className="text-[10px] text-[var(--text-tertiary)]">{ch.count.toLocaleString()}</p>
+                <p className="mt-2 text-xs font-medium text-(--text-secondary)">{ch.channel}</p>
+                <p className="text-[10px] text-(--text-tertiary)">{ch.count.toLocaleString()}</p>
               </div>
             ))}
           </div>

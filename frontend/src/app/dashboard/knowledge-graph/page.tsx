@@ -112,8 +112,8 @@ export default function MapIntelligencePage() {
             <MapPin className="h-5 w-5 text-cyan-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Map Intelligence</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Map Intelligence</h1>
+            <p className="text-sm text-(--text-secondary)">
               {points.length} geo-located submissions across Varanasi constituency
             </p>
           </div>
@@ -143,12 +143,12 @@ export default function MapIntelligencePage() {
                 .filter(([key]) => (counts[key] ?? 0) > 0)
                 .sort((a, b) => (counts[b[0]] ?? 0) - (counts[a[0]] ?? 0))
                 .map(([key, color]) => (
-                  <div key={key} className="flex items-center gap-3 rounded-lg p-2 hover:bg-[var(--bg-secondary)]">
+                  <div key={key} className="flex items-center gap-3 rounded-lg p-2 hover:bg-(--bg-secondary)">
                     <div className="h-3 w-3 rounded-full shrink-0" style={{ backgroundColor: color }} />
-                    <span className="text-xs font-medium text-[var(--text-primary)] flex-1 capitalize">
+                    <span className="text-xs font-medium text-(--text-primary) flex-1 capitalize">
                       {key.replace(/_/g, " ")}
                     </span>
-                    <span className="text-xs text-[var(--text-tertiary)]">{counts[key] ?? 0}</span>
+                    <span className="text-xs text-(--text-tertiary)">{counts[key] ?? 0}</span>
                   </div>
                 ))}
             </div>
@@ -161,15 +161,15 @@ export default function MapIntelligencePage() {
                 <CardTitle className="text-sm">Selected Submission</CardTitle>
               </CardHeader>
               <div className="space-y-2">
-                <p className="text-sm font-medium text-[var(--text-primary)]">{selected.title}</p>
+                <p className="text-sm font-medium text-(--text-primary)">{selected.title}</p>
                 <div className="flex flex-wrap gap-1.5">
                   <Badge variant="info" size="sm">{selected.sector.replace(/_/g, " ")}</Badge>
                   <Badge variant="default" size="sm">{selected.status.replace(/_/g, " ")}</Badge>
                 </div>
-                <p className="text-xs text-[var(--text-tertiary)]">
+                <p className="text-xs text-(--text-tertiary)">
                   Urgency: {(selected.urgency * 100).toFixed(0)}% · Upvotes: {selected.upvotes}
                 </p>
-                <p className="text-[10px] text-[var(--text-tertiary)]">
+                <p className="text-[10px] text-(--text-tertiary)">
                   {selected.lat.toFixed(4)}, {selected.lng.toFixed(4)}
                 </p>
               </div>
@@ -183,7 +183,7 @@ export default function MapIntelligencePage() {
             {(loading || !isLoaded) && (
               <div className="flex items-center justify-center h-[560px]">
                 <Loader2 className="h-6 w-6 animate-spin text-primary-500" />
-                <span className="ml-2 text-sm text-[var(--text-tertiary)]">Loading map...</span>
+                <span className="ml-2 text-sm text-(--text-tertiary)">Loading map...</span>
               </div>
             )}
 

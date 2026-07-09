@@ -67,12 +67,12 @@ export function ScoreRing({
         />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-lg font-bold text-[var(--text-primary)]">
+        <span className="text-lg font-bold text-(--text-primary)">
           {animatedScore.toFixed(0)}
         </span>
       </div>
       {label && (
-        <span className="mt-1.5 text-xs font-medium text-[var(--text-tertiary)]">
+        <span className="mt-1.5 text-xs font-medium text-(--text-tertiary)">
           {label}
         </span>
       )}

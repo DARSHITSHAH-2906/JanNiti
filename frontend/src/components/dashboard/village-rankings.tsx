@@ -50,7 +50,7 @@ export function VillageRankings() {
         <CardTitle>Village Infrastructure Rankings</CardTitle>
       </CardHeader>
       {villages.length === 0 && (
-        <p className="text-center text-sm text-[var(--text-tertiary)] py-8">No village data</p>
+        <p className="text-center text-sm text-(--text-tertiary) py-8">No village data</p>
       )}
       <div className="space-y-3">
         {villages.map((village: any, i: number) => (
@@ -65,8 +65,8 @@ export function VillageRankings() {
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-[var(--text-primary)] truncate">{village.name ?? "Village"}</p>
-                <span className="text-xs font-bold text-[var(--text-secondary)]">
+                <p className="text-sm font-medium text-(--text-primary) truncate">{village.name ?? "Village"}</p>
+                <span className="text-xs font-bold text-(--text-secondary)">
                   {Math.round((village.infrastructureScore ?? 0) * 100)}%
                 </span>
               </div>
@@ -79,7 +79,7 @@ export function VillageRankings() {
                     (village.infrastructureScore ?? 0) < 0.6 ? "bg-amber-500" : "bg-emerald-500"
                 }
               />
-              <p className="mt-0.5 text-[10px] text-[var(--text-tertiary)]">
+              <p className="mt-0.5 text-[10px] text-(--text-tertiary)">
                 Pop: {formatNumber(village.population ?? 0)} · Submissions: {village.submissionCount ?? 0}
               </p>
             </div>

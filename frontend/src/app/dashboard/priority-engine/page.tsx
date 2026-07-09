@@ -61,8 +61,8 @@ export default function PriorityEnginePage() {
             <Brain className="h-5 w-5 text-primary-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Decision Intelligence Engine</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Decision Intelligence Engine</h1>
+            <p className="text-sm text-(--text-secondary)">
               Transparent AI-powered project prioritization with explainable scoring
             </p>
           </div>
@@ -111,15 +111,15 @@ export default function PriorityEnginePage() {
           {WEIGHT_FACTORS.map((factor) => (
             <div
               key={factor.key}
-              className="rounded-xl border border-[var(--border-primary)] p-4"
+              className="rounded-xl border border-(--border-primary) p-4"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-900/20">
                   <factor.icon className="h-4 w-4 text-primary-600" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-sm font-semibold text-[var(--text-primary)]">{factor.label}</h4>
-                  <p className="text-[10px] text-[var(--text-tertiary)]">{factor.description}</p>
+                  <h4 className="text-sm font-semibold text-(--text-primary)">{factor.label}</h4>
+                  <p className="text-[10px] text-(--text-tertiary)">{factor.description}</p>
                 </div>
                 <span className="text-lg font-bold text-primary-600">{weights[factor.key]}%</span>
               </div>
@@ -150,34 +150,34 @@ export default function PriorityEnginePage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm" role="table">
             <thead>
-              <tr className="border-b border-[var(--border-primary)]">
-                <th className="pb-3 pr-4 text-left text-xs font-semibold text-[var(--text-tertiary)] uppercase">Rank</th>
-                <th className="pb-3 pr-4 text-left text-xs font-semibold text-[var(--text-tertiary)] uppercase">Project</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">AI Score</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Demand</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Feasibility</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Social</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Env.</th>
-                <th className="pb-3 pr-4 text-center text-xs font-semibold text-[var(--text-tertiary)] uppercase">Infra Gap</th>
-                <th className="pb-3 text-right text-xs font-semibold text-[var(--text-tertiary)] uppercase">Cost</th>
+              <tr className="border-b border-(--border-primary)">
+                <th className="pb-3 pr-4 text-left text-xs font-semibold text-(--text-tertiary) uppercase">Rank</th>
+                <th className="pb-3 pr-4 text-left text-xs font-semibold text-(--text-tertiary) uppercase">Project</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">AI Score</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Demand</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Feasibility</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Social</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Env.</th>
+                <th className="pb-3 pr-4 text-center text-xs font-semibold text-(--text-tertiary) uppercase">Infra Gap</th>
+                <th className="pb-3 text-right text-xs font-semibold text-(--text-tertiary) uppercase">Cost</th>
               </tr>
             </thead>
             <tbody>
               {projects.map((project: any, i: number) => (
                 <tr
                   key={project.id}
-                  className="border-b border-[var(--border-primary)] last:border-0 hover:bg-[var(--bg-secondary)] transition-colors"
+                  className="border-b border-(--border-primary) last:border-0 hover:bg-(--bg-secondary) transition-colors"
                 >
                   <td className="py-4 pr-4">
                     <span className={cn(
                       "inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold",
-                      i < 3 ? "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400" : "bg-[var(--bg-tertiary)] text-[var(--text-tertiary)]"
+                      i < 3 ? "bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400" : "bg-(--bg-tertiary) text-(--text-tertiary)"
                     )}>
                       {i + 1}
                     </span>
                   </td>
                   <td className="py-4 pr-4">
-                    <p className="font-medium text-[var(--text-primary)]">{project.title}</p>
+                    <p className="font-medium text-(--text-primary)">{project.title}</p>
                     <div className="mt-1 flex items-center gap-2">
                       <Badge variant="info" size="sm">{getSectorLabel(project.sector)}</Badge>
                       <Badge className={getPriorityBadge(project.priority)} size="sm">{project.priority}</Badge>
@@ -201,7 +201,7 @@ export default function PriorityEnginePage() {
                   <td className="py-4 pr-4 text-center">
                     <MetricCell value={project.infraGap ?? project.infrastructureGapScore ?? 0} />
                   </td>
-                  <td className="py-4 text-right text-sm font-medium text-[var(--text-primary)]">
+                  <td className="py-4 text-right text-sm font-medium text-(--text-primary)">
                     {formatCurrency(project.estimatedCost ?? 0)}
                   </td>
                 </tr>

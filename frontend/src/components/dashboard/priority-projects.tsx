@@ -68,7 +68,7 @@ export function PriorityProjects() {
       </CardHeader>
 
       {projects.length === 0 && (
-        <p className="text-center text-sm text-[var(--text-tertiary)] py-8">No projects found</p>
+        <p className="text-center text-sm text-(--text-tertiary) py-8">No projects found</p>
       )}
 
       <div className="space-y-3">
@@ -76,14 +76,14 @@ export function PriorityProjects() {
           <div
             key={project.id}
             className={cn(
-              "rounded-xl border border-[var(--border-primary)] p-4 transition-all duration-200",
+              "rounded-xl border border-(--border-primary) p-4 transition-all duration-200",
               "hover:border-primary-200 dark:hover:border-primary-800",
-              expandedId === project.id && "border-primary-300 dark:border-primary-700 shadow-[var(--shadow-sm)]"
+              expandedId === project.id && "border-primary-300 dark:border-primary-700 shadow-(--shadow-sm)"
             )}
           >
             <div className="flex items-center gap-4">
               {/* Rank */}
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--bg-tertiary)] text-sm font-bold text-[var(--text-secondary)]">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-(--bg-tertiary) text-sm font-bold text-(--text-secondary)">
                 #{index + 1}
               </div>
 
@@ -93,7 +93,7 @@ export function PriorityProjects() {
               {/* Content */}
               <div className="min-w-0 flex-1">
                 <div>
-                  <h4 className="text-sm font-semibold text-[var(--text-primary)]">
+                  <h4 className="text-sm font-semibold text-(--text-primary)">
                     {project.title}
                   </h4>
                   <div className="mt-1 flex flex-wrap items-center gap-2">
@@ -106,7 +106,7 @@ export function PriorityProjects() {
                   </div>
                 </div>
 
-                <div className="mt-2 flex items-center gap-4 text-xs text-[var(--text-tertiary)]">
+                <div className="mt-2 flex items-center gap-4 text-xs text-(--text-tertiary)">
                   <span className="flex items-center gap-1">
                     <IndianRupee className="h-3 w-3" />
                     {formatCurrency(project.estimatedCost ?? 0)}
@@ -128,7 +128,7 @@ export function PriorityProjects() {
                       }
                       className="flex-1"
                     />
-                    <span className="text-xs font-medium text-[var(--text-secondary)]">
+                    <span className="text-xs font-medium text-(--text-secondary)">
                       {project.completionPercentage ?? 0}%
                     </span>
                   </div>
@@ -149,7 +149,7 @@ export function PriorityProjects() {
             {/* Expanded */}
             {expandedId === project.id && (
               <div className="mt-4 animate-fade-in rounded-lg bg-primary-50/50 dark:bg-primary-900/10 p-4">
-                <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
+                <p className="text-xs leading-relaxed text-(--text-secondary)">
                   {project.description ?? "No description available."}
                 </p>
                 <div className="mt-3 grid grid-cols-5 gap-2">
@@ -161,8 +161,8 @@ export function PriorityProjects() {
                     { label: "Infra Gap", value: project.infrastructureGapScore ?? 0 },
                   ].map((metric) => (
                     <div key={metric.label} className="text-center">
-                      <div className="text-lg font-bold text-[var(--text-primary)]">{Math.round(metric.value)}</div>
-                      <div className="text-[10px] text-[var(--text-tertiary)]">{metric.label}</div>
+                      <div className="text-lg font-bold text-(--text-primary)">{Math.round(metric.value)}</div>
+                      <div className="text-[10px] text-(--text-tertiary)">{metric.label}</div>
                     </div>
                   ))}
                 </div>

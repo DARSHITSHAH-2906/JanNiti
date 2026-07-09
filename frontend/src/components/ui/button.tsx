@@ -12,9 +12,9 @@ const variants = {
   primary:
     "bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-sm",
   secondary:
-    "bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--border-primary)] border border-[var(--border-primary)]",
+    "bg-[var(--bg-tertiary)] text-(--text-primary) hover:bg-[var(--border-primary)] border border-(--border-primary)",
   ghost:
-    "text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)]",
+    "text-(--text-secondary) hover:bg-[var(--bg-tertiary)] hover:text-(--text-primary)",
   danger:
     "bg-red-600 text-white hover:bg-red-700 active:bg-red-800",
   accent:

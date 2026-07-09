@@ -26,8 +26,8 @@ export default function DepartmentsPage() {
             <Building2 className="h-5 w-5 text-orange-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Government Departments</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Government Departments</h1>
+            <p className="text-sm text-(--text-secondary)">
               Inter-departmental coordination, task tracking, and performance monitoring
             </p>
           </div>
@@ -54,20 +54,20 @@ export default function DepartmentsPage() {
               </Badge>
             </div>
 
-            <h3 className="text-sm font-semibold text-[var(--text-primary)]">{dept.name}</h3>
+            <h3 className="text-sm font-semibold text-(--text-primary)">{dept.name}</h3>
 
             <div className="mt-4 space-y-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 text-[var(--text-tertiary)]">
+                <span className="flex items-center gap-1.5 text-(--text-tertiary)">
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
                   Completed
                 </span>
-                <span className="font-medium text-[var(--text-primary)]">{dept.completed}/{dept.projects}</span>
+                <span className="font-medium text-(--text-primary)">{dept.completed}/{dept.projects}</span>
               </div>
               <Progress value={(dept.completed / dept.projects) * 100} size="sm" barClassName="bg-emerald-500" />
 
               <div className="flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 text-[var(--text-tertiary)]">
+                <span className="flex items-center gap-1.5 text-(--text-tertiary)">
                   <Clock className="h-3 w-3 text-amber-500" />
                   Avg Response
                 </span>
@@ -81,11 +81,11 @@ export default function DepartmentsPage() {
               </div>
 
               <div className="flex items-center justify-between text-xs">
-                <span className="flex items-center gap-1.5 text-[var(--text-tertiary)]">
+                <span className="flex items-center gap-1.5 text-(--text-tertiary)">
                   <AlertTriangle className="h-3 w-3 text-orange-500" />
                   Pending
                 </span>
-                <span className="font-medium text-[var(--text-primary)]">{dept.pending} tasks</span>
+                <span className="font-medium text-(--text-primary)">{dept.pending} tasks</span>
               </div>
             </div>
           </Card>

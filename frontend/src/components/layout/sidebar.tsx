@@ -53,13 +53,13 @@ export function Sidebar() {
     <aside
       className={cn(
         "fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-primary-900/20",
-        "bg-[var(--bg-sidebar)] text-white transition-all duration-300",
+        "bg-(--bg-sidebar) text-white transition-all duration-300",
         collapsed ? "w-[68px]" : "w-[260px]"
       )}
     >
       {/* Logo */}
       <div className="flex h-16 items-center gap-3 border-b border-white/10 px-4">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-primary-500 to-accent-500 shadow-lg">
           <Sparkles className="h-5 w-5 text-white" />
         </div>
         {!collapsed && (

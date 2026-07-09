@@ -27,16 +27,16 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="min-h-screen bg-(--bg-primary)">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[var(--border-primary)] bg-[var(--bg-primary)]/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-(--border-primary) bg-(--bg-primary)/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-accent-500 shadow-lg">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-primary-600 to-accent-500 shadow-lg">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
             <div>
-              <span className="text-lg font-bold text-[var(--text-primary)]">JanNiti AI</span>
+              <span className="text-lg font-bold text-(--text-primary)">JanNiti AI</span>
               <span className="ml-2 rounded bg-primary-100 dark:bg-primary-900/30 px-1.5 py-0.5 text-[10px] font-medium text-primary-700 dark:text-primary-400">
                 v2.5
               </span>
@@ -47,7 +47,7 @@ export default function LandingPage() {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="text-sm font-medium text-(--text-secondary) hover:text-(--text-primary) transition-colors"
               >
                 {item}
               </a>
@@ -56,7 +56,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/dashboard/copilot"
-              className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[var(--border-primary)] px-4 py-2 text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-(--border-primary) px-4 py-2 text-sm font-medium text-(--text-secondary) hover:bg-(--bg-secondary) transition-colors"
             >
               <Bot className="h-4 w-4" />
               Try AI Copilot
@@ -142,12 +142,12 @@ export default function LandingPage() {
       </section>
 
       {/* Problem Statement */}
-      <section className="bg-[var(--bg-secondary)] py-16" id="about">
+      <section className="bg-(--bg-secondary) py-16" id="about">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl">
+          <h2 className="text-2xl font-bold text-(--text-primary) sm:text-3xl">
             The Challenge
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[var(--text-secondary)]">
+          <p className="mt-4 text-lg leading-relaxed text-(--text-secondary)">
             Members of Parliament receive <strong>thousands of requests</strong> through multiple channels — 
             letters, WhatsApp, in-person meetings, SMS. Without AI-powered analysis, critical needs get lost, 
             duplicates pile up, and decisions become reactive rather than strategic.
@@ -158,9 +158,9 @@ export default function LandingPage() {
               { stat: "22+", label: "Indian languages to process" },
               { stat: "₹5 Cr", label: "MPLADS budget per year" },
             ].map((item) => (
-              <div key={item.label} className="rounded-xl bg-[var(--bg-card)] p-4 border border-[var(--border-primary)]">
+              <div key={item.label} className="rounded-xl bg-(--bg-card) p-4 border border-(--border-primary)">
                 <p className="text-2xl font-bold text-primary-600">{item.stat}</p>
-                <p className="text-sm text-[var(--text-secondary)]">{item.label}</p>
+                <p className="text-sm text-(--text-secondary)">{item.label}</p>
               </div>
             ))}
           </div>
@@ -174,10 +174,10 @@ export default function LandingPage() {
             <Brain className="h-4 w-4" />
             Gemini + Bhashini + Vertex AI
           </div>
-          <h2 className="text-3xl font-bold text-[var(--text-primary)]">
+          <h2 className="text-3xl font-bold text-(--text-primary)">
             AI at the Core, Not Cosmetic
           </h2>
-          <p className="mt-3 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+          <p className="mt-3 text-lg text-(--text-secondary) max-w-2xl mx-auto">
             Every feature is powered by genuine AI intelligence — from multilingual processing to explainable recommendations
           </p>
         </div>
@@ -250,24 +250,24 @@ export default function LandingPage() {
           ].map((feature, i) => (
             <div
               key={feature.title}
-              className="group rounded-2xl border border-[var(--border-primary)] bg-[var(--bg-card)] p-6 transition-all duration-300 hover:shadow-[var(--shadow-md)] hover:-translate-y-1"
+              className="group rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6 transition-all duration-300 hover:shadow-(--shadow-md) hover:-translate-y-1"
             >
               <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${feature.color}`}>
                 <feature.icon className={`h-6 w-6 ${feature.iconColor}`} />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[var(--text-primary)]">{feature.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{feature.description}</p>
+              <h3 className="mt-4 text-lg font-semibold text-(--text-primary)">{feature.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">{feature.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Role-Based Portals */}
-      <section className="bg-[var(--bg-secondary)] py-20" id="features">
+      <section className="bg-(--bg-secondary) py-20" id="features">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-[var(--text-primary)]">Role-Based Portals</h2>
-            <p className="mt-3 text-lg text-[var(--text-secondary)]">
+            <h2 className="text-3xl font-bold text-(--text-primary)">Role-Based Portals</h2>
+            <p className="mt-3 text-lg text-(--text-secondary)">
               Tailored experiences for every stakeholder in the development ecosystem
             </p>
           </div>
@@ -282,13 +282,13 @@ export default function LandingPage() {
             ].map((portal) => (
               <div
                 key={portal.title}
-                className="rounded-2xl border border-[var(--border-primary)] bg-[var(--bg-card)] p-6 text-center hover:shadow-[var(--shadow-md)] transition-all hover:-translate-y-1"
+                className="rounded-2xl border border-(--border-primary) bg-(--bg-card) p-6 text-center hover:shadow-(--shadow-md) transition-all hover:-translate-y-1"
               >
                 <div className={`mx-auto inline-flex h-14 w-14 items-center justify-center rounded-2xl ${portal.bg}`}>
                   <portal.icon className={`h-7 w-7 ${portal.color}`} />
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-[var(--text-primary)]">{portal.title}</h3>
-                <p className="mt-1 text-sm text-[var(--text-secondary)]">{portal.desc}</p>
+                <h3 className="mt-4 text-base font-semibold text-(--text-primary)">{portal.title}</h3>
+                <p className="mt-1 text-sm text-(--text-secondary)">{portal.desc}</p>
               </div>
             ))}
           </div>
@@ -298,8 +298,8 @@ export default function LandingPage() {
       {/* Tech Stack */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6" id="demo">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Production-Grade Architecture</h2>
-          <p className="mt-3 text-lg text-[var(--text-secondary)]">
+          <h2 className="text-3xl font-bold text-(--text-primary)">Production-Grade Architecture</h2>
+          <p className="mt-3 text-lg text-(--text-secondary)">
             Built with enterprise technologies for scale, security, and rapid deployment
           </p>
         </div>
@@ -312,7 +312,7 @@ export default function LandingPage() {
           ].map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-[var(--border-primary)] bg-[var(--bg-card)] px-4 py-2 text-sm font-medium text-[var(--text-secondary)] hover:border-primary-300 hover:text-primary-600 transition-colors"
+              className="rounded-full border border-(--border-primary) bg-(--bg-card) px-4 py-2 text-sm font-medium text-(--text-secondary) hover:border-primary-300 hover:text-primary-600 transition-colors"
             >
               {tech}
             </span>
@@ -349,19 +349,19 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--border-primary)] bg-[var(--bg-primary)] py-10">
+      <footer className="border-t border-(--border-primary) bg-(--bg-primary) py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-accent-500">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary-600 to-accent-500">
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
-              <span className="text-sm font-bold text-[var(--text-primary)]">JanNiti AI</span>
-              <span className="text-xs text-[var(--text-tertiary)]">
+              <span className="text-sm font-bold text-(--text-primary)">JanNiti AI</span>
+              <span className="text-xs text-(--text-tertiary)">
                 Constituency Development Intelligence Platform
               </span>
             </div>
-            <p className="text-xs text-[var(--text-tertiary)]">
+            <p className="text-xs text-(--text-tertiary)">
               Built for Google AI Hackathon 2026 • WCAG 2.2 AA Compliant • Made in India 🇮🇳
             </p>
           </div>
