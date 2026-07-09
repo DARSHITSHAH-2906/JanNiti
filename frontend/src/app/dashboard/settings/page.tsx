@@ -26,8 +26,8 @@ export default function SettingsPage() {
             <Settings className="h-5 w-5 text-slate-600 dark:text-slate-400" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Settings</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Settings</h1>
+            <p className="text-sm text-(--text-secondary)">
               Platform configuration, security, and preferences
             </p>
           </div>
@@ -44,8 +44,8 @@ export default function SettingsPage() {
         </CardHeader>
         <div className="flex items-center justify-between py-2">
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">Theme</p>
-            <p className="text-xs text-[var(--text-tertiary)]">Switch between light and dark mode</p>
+            <p className="text-sm font-medium text-(--text-primary)">Theme</p>
+            <p className="text-xs text-(--text-tertiary)">Switch between light and dark mode</p>
           </div>
           <Button variant="secondary" size="sm" onClick={toggleTheme}>
             {theme === "light" ? "Dark Mode" : "Light Mode"}
@@ -69,8 +69,8 @@ export default function SettingsPage() {
             { label: "Two-Factor Authentication", status: "Available", variant: "info" as const },
             { label: "API Key Management", status: "3 Active Keys", variant: "info" as const },
           ].map((item) => (
-            <div key={item.label} className="flex items-center justify-between py-2 border-b border-[var(--border-primary)] last:border-0">
-              <span className="text-sm text-[var(--text-primary)]">{item.label}</span>
+            <div key={item.label} className="flex items-center justify-between py-2 border-b border-(--border-primary) last:border-0">
+              <span className="text-sm text-(--text-primary)">{item.label}</span>
               <Badge variant={item.variant} size="sm">{item.status}</Badge>
             </div>
           ))}
@@ -94,10 +94,10 @@ export default function SettingsPage() {
             { label: "Scheme Match Notifications", enabled: true },
           ].map((item) => (
             <div key={item.label} className="flex items-center justify-between py-2">
-              <span className="text-sm text-[var(--text-primary)]">{item.label}</span>
+              <span className="text-sm text-(--text-primary)">{item.label}</span>
               <button
                 className={`relative h-6 w-11 rounded-full transition-colors ${
-                  item.enabled ? "bg-primary-600" : "bg-[var(--bg-tertiary)]"
+                  item.enabled ? "bg-primary-600" : "bg-(--bg-tertiary)"
                 }`}
                 aria-label={`Toggle ${item.label}`}
               >
@@ -130,8 +130,8 @@ export default function SettingsPage() {
             { label: "API Status", value: "All systems operational" },
           ].map((item) => (
             <div key={item.label}>
-              <p className="text-xs text-[var(--text-tertiary)]">{item.label}</p>
-              <p className="text-sm font-medium text-[var(--text-primary)] mt-0.5">{item.value}</p>
+              <p className="text-xs text-(--text-tertiary)">{item.label}</p>
+              <p className="text-sm font-medium text-(--text-primary) mt-0.5">{item.value}</p>
             </div>
           ))}
         </div>

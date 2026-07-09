@@ -200,8 +200,8 @@ export default function ResolutionProofPage() {
             <CheckCircle2 className="h-5 w-5 text-emerald-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Resolution Proofs</h1>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <h1 className="text-2xl font-bold text-(--text-primary)">Resolution Proofs</h1>
+            <p className="text-sm text-(--text-secondary)">
               Upload evidence, save completion details, and view stored proof records from the database.
             </p>
           </div>
@@ -237,8 +237,8 @@ export default function ResolutionProofPage() {
                 <stat.icon className={`h-5 w-5 ${stat.color}`} />
               </div>
               <div>
-                <p className="text-xl font-bold text-[var(--text-primary)]">{stat.value}</p>
-                <p className="text-xs text-[var(--text-tertiary)]">{stat.label}</p>
+                <p className="text-xl font-bold text-(--text-primary)">{stat.value}</p>
+                <p className="text-xs text-(--text-tertiary)">{stat.label}</p>
               </div>
             </div>
           </Card>
@@ -256,13 +256,13 @@ export default function ResolutionProofPage() {
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Select Project
               </label>
               <select
                 value={formData.projectId}
                 onChange={(event) => handleChange("projectId", event.target.value)}
-                className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 required
               >
                 <option value="">Choose a project...</option>
@@ -275,13 +275,13 @@ export default function ResolutionProofPage() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Link to submission (optional)
               </label>
               <select
                 value={formData.submissionId}
                 onChange={(event) => handleChange("submissionId", event.target.value)}
-                className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">No linked submission</option>
                 {submissions.map((submission) => (
@@ -294,7 +294,7 @@ export default function ResolutionProofPage() {
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+                <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                   Resolved By (Department/Agency)
                 </label>
                 <input
@@ -302,11 +302,11 @@ export default function ResolutionProofPage() {
                   value={formData.departmentName}
                   onChange={(event) => handleChange("departmentName", event.target.value)}
                   placeholder="e.g., PWD Varanasi Division"
-                  className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+                <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                   Contractor/Implementer
                 </label>
                 <input
@@ -314,14 +314,14 @@ export default function ResolutionProofPage() {
                   value={formData.contractorName}
                   onChange={(event) => handleChange("contractorName", event.target.value)}
                   placeholder="e.g., M/s Kumar Infrastructure"
-                  className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+                <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                   Budget Used (₹)
                 </label>
                 <input
@@ -329,22 +329,22 @@ export default function ResolutionProofPage() {
                   value={formData.budgetUsed}
                   onChange={(event) => handleChange("budgetUsed", event.target.value)}
                   placeholder="e.g., 450000"
-                  className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+                <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                   Completion Date
                 </label>
                 <input
                   type="date"
                   value={formData.completionDate}
                   onChange={(event) => handleChange("completionDate", event.target.value)}
-                  className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+                <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                   % Resolved
                 </label>
                 <input
@@ -354,19 +354,19 @@ export default function ResolutionProofPage() {
                   value={formData.percentageResolved}
                   onChange={(event) => handleChange("percentageResolved", event.target.value)}
                   placeholder="100"
-                  className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Resolution Type
               </label>
               <select
                 value={formData.resolutionType}
                 onChange={(event) => handleChange("resolutionType", event.target.value)}
-                className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="full">Full</option>
                 <option value="partial">Partial</option>
@@ -376,7 +376,7 @@ export default function ResolutionProofPage() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Resolution Description
               </label>
               <textarea
@@ -384,25 +384,25 @@ export default function ResolutionProofPage() {
                 value={formData.description}
                 onChange={(event) => handleChange("description", event.target.value)}
                 placeholder="Describe what work was done, how the problem was resolved..."
-                className="w-full resize-none rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full resize-none rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
                 required
               />
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Proof of Work (Images, Videos, Documents)
               </label>
-              <label className="block cursor-pointer rounded-xl border-2 border-dashed border-[var(--border-primary)] p-8 text-center transition-colors hover:border-primary-400">
-                <Upload className="mx-auto mb-3 h-8 w-8 text-[var(--text-tertiary)]" />
-                <p className="text-sm font-medium text-[var(--text-secondary)]">Choose files to upload</p>
-                <p className="mt-1 text-xs text-[var(--text-tertiary)]">Images, videos, and documents will be stored with the proof record.</p>
+              <label className="block cursor-pointer rounded-xl border-2 border-dashed border-(--border-primary) p-8 text-center transition-colors hover:border-primary-400">
+                <Upload className="mx-auto mb-3 h-8 w-8 text-(--text-tertiary)" />
+                <p className="text-sm font-medium text-(--text-secondary)">Choose files to upload</p>
+                <p className="mt-1 text-xs text-(--text-tertiary)">Images, videos, and documents will be stored with the proof record.</p>
                 <input type="file" multiple className="sr-only" onChange={handleFileChange} accept="image/*,video/*,.pdf,.doc,.docx" />
               </label>
               {files.length > 0 ? (
-                <ul className="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                <ul className="mt-2 space-y-1 text-sm text-(--text-secondary)">
                   {files.map((file) => (
-                    <li key={`${file.name}-${file.size}`} className="rounded border border-[var(--border-primary)] px-2 py-1">
+                    <li key={`${file.name}-${file.size}`} className="rounded border border-(--border-primary) px-2 py-1">
                       {file.name}
                     </li>
                   ))}
@@ -411,7 +411,7 @@ export default function ResolutionProofPage() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-[var(--text-primary)]">
+              <label className="mb-1 block text-sm font-medium text-(--text-primary)">
                 Work Order / Reference Number (optional)
               </label>
               <input
@@ -419,7 +419,7 @@ export default function ResolutionProofPage() {
                 value={formData.workOrderNumber}
                 onChange={(event) => handleChange("workOrderNumber", event.target.value)}
                 placeholder="e.g., WO/VAR/2026/0145"
-                className="w-full rounded-lg border border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full rounded-lg border border-(--border-primary) bg-(--bg-secondary) px-4 py-2.5 text-sm text-(--text-primary) placeholder:text-(--text-tertiary) focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
             </div>
 
@@ -437,9 +437,9 @@ export default function ResolutionProofPage() {
 
       <div className="space-y-4">
         {isFetching ? (
-          <Card className="p-6 text-sm text-[var(--text-secondary)]">Loading resolution proofs...</Card>
+          <Card className="p-6 text-sm text-(--text-secondary)">Loading resolution proofs...</Card>
         ) : resolutions.length === 0 ? (
-          <Card className="p-6 text-sm text-[var(--text-secondary)]">No resolution proofs found yet. Add one to get started.</Card>
+          <Card className="p-6 text-sm text-(--text-secondary)">No resolution proofs found yet. Add one to get started.</Card>
         ) : (
           resolutions.map((item, index) => {
             const proofPhotos = Array.isArray(item.photos) ? item.photos : [];
@@ -460,15 +460,15 @@ export default function ResolutionProofPage() {
                       </Badge>
                     </div>
 
-                    <h3 className="mt-2 text-sm font-semibold text-[var(--text-primary)]">
+                    <h3 className="mt-2 text-sm font-semibold text-(--text-primary)">
                       {item.projectTitle ?? item.submissionTitle ?? "Resolution proof"}
                     </h3>
 
-                    <p className="mt-1.5 text-sm text-[var(--text-secondary)] line-clamp-2">
+                    <p className="mt-1.5 text-sm text-(--text-secondary) line-clamp-2">
                       {item.description ?? "No description provided."}
                     </p>
 
-                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[var(--text-tertiary)]">
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-(--text-tertiary)">
                       <span className="flex items-center gap-1">
                         <User className="h-3 w-3" /> {item.departmentName ?? "Department pending"}
                       </span>
@@ -483,7 +483,7 @@ export default function ResolutionProofPage() {
 
                   <div className="flex flex-col items-end gap-3 shrink-0">
                     <div className="text-right">
-                      <p className="text-xs text-[var(--text-tertiary)]">Completion</p>
+                      <p className="text-xs text-(--text-tertiary)">Completion</p>
                       <div className="mt-1 flex items-center gap-2">
                         <Progress
                           value={percentage}
@@ -497,19 +497,19 @@ export default function ResolutionProofPage() {
                                 : "bg-amber-500"
                           }
                         />
-                        <span className="text-sm font-bold text-[var(--text-primary)]">{percentage}%</span>
+                        <span className="text-sm font-bold text-(--text-primary)">{percentage}%</span>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
                       <div className={cn(
                         "flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium",
-                        "bg-[var(--bg-tertiary)] text-[var(--text-secondary)]"
+                        "bg-(--bg-tertiary) text-(--text-secondary)"
                       )}>
                         <Camera className="h-3 w-3" />
                         {proofPhotos.length + proofDocuments.length} proof{proofPhotos.length + proofDocuments.length === 1 ? "" : "s"}
                       </div>
-                      <div className="flex items-center gap-1.5 rounded-lg bg-[var(--bg-tertiary)] px-2.5 py-1.5 text-xs font-medium text-[var(--text-secondary)]">
+                      <div className="flex items-center gap-1.5 rounded-lg bg-(--bg-tertiary) px-2.5 py-1.5 text-xs font-medium text-(--text-secondary)">
                         <FileText className="h-3 w-3" />
                         {proofDocuments.length} doc{proofDocuments.length === 1 ? "" : "s"}
                       </div>
